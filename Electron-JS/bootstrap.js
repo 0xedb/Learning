@@ -7,8 +7,7 @@ let win
 function createWindow () {
   win = new BrowserWindow({
     width: 1000,
-    height: 800,
-    backgroundColor: '#FFAD21', 
+    height: 800, 
     title: "Bruno's Very First Start",
     darkTheme: true
   })
@@ -18,7 +17,7 @@ function createWindow () {
     win = null
   });
 
-  // win.openDevTools();
+  win.openDevTools();
 }
 
 app.on('ready', createWindow);
@@ -28,10 +27,12 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
-})
+});
 
 app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
-})
+});
+
+
